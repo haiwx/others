@@ -1,0 +1,245 @@
+/**********标签栏调整*************/
+ 
+/*调节标签的宽度*/
+/* .tabbrowser-tab[fadein]:not([pinned]) {
+  max-width: 130px !important;
+  min-width: 130px !important;
+} */
+
+/*启用标签计数+列出所有标签*/
+#main-window {
+  counter-reset: tabs;
+}
+
+.tabbrowser-tab:not(:-moz-any([concealed])) {
+  counter-increment: tabs;
+}
+
+#alltabs-button {
+  visibility: visible!important;
+  margin-right: -22px !important;
+}
+
+#alltabs-button:after {
+  content: counter(tabs);
+  display: -moz-box;
+}
+
+#alltabs-button> :-moz-any(label, image) {
+  display: none;
+}
+
+
+/***********地址栏调整************/
+
+/*隐藏页面动作按钮*/
+/* #pageActionButton {
+  display: none;
+} */
+
+/*将显示历史下拉箭头移至最后*/
+/* .urlbar-history-dropmarker {
+  -moz-box-ordinal-group: 100 !important;
+} */
+
+/*显示历史下拉箭头一直显示*/
+/* #urlbar .autocomplete-history-dropmarker,
+#urlbar .urlbar-history-dropmarker,
+#urlbar:not(:hover) > .urlbar-textbox-container > .urlbar-history-dropmarker {
+  opacity: 1 !important;
+} */
+
+
+/***********工具栏调整************/
+
+/*隐藏 Bitwraden 扩展角标*/
+#_446900e4-71c2-419f-a6a7-df9c091e268b_-browser-action>stack>label {
+  display: none;
+}
+
+
+/***********右键菜单调整************/
+
+/*隐藏印象笔记.剪藏*/
+menu[id*="_e0b8c461-f8fb-49b4-8373-fe32e9252800"] {
+  display: none;
+}
+
+/*隐藏导航菜单*/
+#context-navigation {
+  display: none;
+}
+
+/*隐藏无效右键菜单*/
+menuitem[disabled="true"] {
+  display: none !important;
+}
+
+/*去除无用页面右键菜单*/
+#context-pocket,
+#context-savepage,
+#context-selectall,
+#context-viewpartialsource-selection,
+#frame[label="此框架"],
+#FavIconReloader {
+  display: none !important;
+}
+
+/*去除“发送到设备”右键*/
+#context-sendpagetodevice, #context-sep-sendpagetodevice,
+#context-sendlinktodevice, #context-sep-sendlinktodevice,
+#context_sendTabToDevice, #context_sendTabToDevice_separator {
+  display: none !important;
+}
+
+/*去除无用超链接右键菜单*/
+#context-savelinktopocket,
+#context-openlink,
+#context-bookmarklink,
+#context-openlinkintab {
+  display: none;
+}
+
+/*去除无用图像右键菜单*/
+#context-setDesktopBackground,
+#context-sendimage,
+#context-viewimageinfo {
+  display: none;
+}
+
+/*去除无用标签右键菜单*/
+#mafMenuSaveTabsInArchive_tabsContextMenu,
+#context_openTabInWindow，#context_reloadTab,
+#context_pinTab,
+#context_unpinTab,
+#context_reloadTab,
+#context_undoCloseTab,
+#printPages2Pdf-men_printThisTab,
+#context_openTabInWindow,
+#xnotifier-tabMenu {
+  display: none;
+}
+
+/*去除无用书签右键菜单*/
+#placesContext_open,
+[command="placesCmd_open:tab"], 
+[class="openintabs-menuitem"],/*在标签页中打开书签组*/
+[id="placesContext_open:newprivatewindow"],/*在新隐私窗口中打开*/
+[id="placesContext_openContainer:tabs"]/*在标签页中打开书签组*/ {
+  display: none;
+}
+
+/*去除无用H5视频右键菜单*/
+#context-media-pause,
+#context-media-mute,
+#context-media-unmute,
+#context-media-hidecontrols {
+  display: none;
+}
+
+/*隐藏所有右键菜单分割线*/
+menuseparator {
+  display: none;
+}
+
+
+/***********侧边栏调整************/
+
+/*隐藏侧边栏头部无用区域*/
+/* #sidebar-header {
+  display: none;
+} */
+
+/*自动显隐侧边栏*/
+/* :root {
+  --sidebar-hover-width: 10px;
+  --sidebar-visible-width: 200px;
+}
+
+#sidebar-box {
+  position: relative !important;
+  overflow-x: hidden !important;
+  margin-right: calc(var(--sidebar-hover-width) * -1) !important;
+  left: var(--sidebar-hover-width) !important;
+  min-width: var(--sidebar-hover-width) !important;
+  max-width: var(--sidebar-hover-width) !important;
+}
+
+#sidebar-box:hover {
+  margin-right: calc(var(--sidebar-visible-width) * -1) !important;
+  left: var(--sidebar-visible-width) !important;
+  min-width: var(--sidebar-visible-width) !important;
+  max-width: var(--sidebar-visible-width) !important;
+}
+
+#sidebar {
+  opacity: 0 !important;
+}
+
+#sidebar:hover {
+  opacity: 1 !important;
+} */
+
+
+/***********图标调整************/
+
+/*收藏夹文件夹图标修改*/
+.bookmark-item[type="menu"] > .toolbarbutton-icon {
+  list-style-image: url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8klEQVQ4EWP8//8/AyWABaS5vHGyDMv/f5VAw7LQDWNkZJzG+OdvR0tL0WN0ORAfbADTv79ZDvbmWdaWhhhqjp04n7Xv4IlPQIlKDEmgAGNV/YSp2GzGphhdDOQ6FpDmitJUhj9//qDL4+WzsLAwdHTPzgJ74dev3wy/fv3CqwFdko0NEvhgA/79+8fw9+8/dDV4+SA9IAA24D+QAxPAqwtJEqQHBKAu+M/w999fJGnCzH//0LzwjxIvgGwnNRZgLgZ74e9foAFATAoA6QEBsAHsbGwkByJID9gAUGqaMmM5Rh4AyxIgwPmE0tzIRMASgtIAakRwutP91xoAAAAASUVORK5CYII=") !important;
+  -moz-image-region: rect(0 16px 16px 0) !important;
+}/*收藏夹文件夹主图标*/
+
+.bookmark-item[container] {
+  list-style-image: url("data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAA8klEQVQ4EWP8//8/AyWABaS5vHGyDMv/f5VAw7LQDWNkZJzG+OdvR0tL0WN0ORAfbADTv79ZDvbmWdaWhhhqjp04n7Xv4IlPQIlKDEmgAGNV/YSp2GzGphhdDOQ6FpDmitJUhj9//qDL4+WzsLAwdHTPzgJ74dev3wy/fv3CqwFdko0NEvhgA/79+8fw9+8/dDV4+SA9IAA24D+QAxPAqwtJEqQHBKAu+M/w999fJGnCzH//0LzwjxIvgGwnNRZgLgZ74e9foAFATAoA6QEBsAHsbGwkByJID9gAUGqaMmM5Rh4AyxIgwPmE0tzIRMASgtIAakRwutP91xoAAAAASUVORK5CYII=")!important;
+  -moz-image-region: rect(0px, 16px, 16px, 0px)!important;
+}/*收藏夹文件夹二级图标*/
+
+
+/***********其他调整************/
+
+/*指向文字加粗*/
+a:hover {
+/*color: #0000FF ;*/
+  -webkit-transition-property: color;
+  -webkit-transition-duration: 0.0s;
+  font-weight: bold
+}
+
+/* 阅读过的链接变灰色 */
+a:visited,.fl:visited {
+  color: rgb(130,130,130) !important
+}
+
+/*—————————书签栏自动隐藏—————————*/
+#PersonalToolbar {
+  width: 100% !important;
+  visibility: hidden !important;
+  position: fixed !important;
+  opacity: 0;
+  transition: .2s !important;
+}
+#navigator-toolbox:hover > #PersonalToolbar {
+  visibility: visible !important;
+  opacity: 1;
+  transition: .3s !important;
+  box-shadow:0 2px 6px 0 rgba(0, 0, 0, .6);
+  background: #F9F9FA !important;
+}
+/*——————————57+去除左上角空白——————————*/
+#nav-bar {
+  border-top-left-radius: 0px!important;
+  border-top-right-radius: 0px!important;
+}
+[url=home.php?mod=space&uid=880893]@media[/url] (-moz-os-version: windows-win7) {
+  @media (-moz-windows-default-theme) {
+          .tab-background:not(:-moz-lwtheme):not([selected=true]) {
+                  background-color: rgba(0, 0, 0, .2) !important;
+          }
+          .tab-line {
+                  height: 0px !important;
+          }
+  }
+}
+:root[tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide=true] ~ #TabsToolbar > .titlebar-placeholder[type="pre-tabs"] {
+  width: 1px!important;
+}
