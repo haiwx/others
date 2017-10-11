@@ -243,3 +243,11 @@ a:visited,.fl:visited {
 :root[tabsintitlebar][sizemode=normal] #toolbar-menubar[autohide=true] ~ #TabsToolbar > .titlebar-placeholder[type="pre-tabs"] {
   width: 1px!important;
 }
+
+/*——————————窄版滚动条——————————*/
+.browserContainer>.browserStack>browser{
+     overflow-y: scroll !important;
+     overflow-x: hidden !important;
+     margin-right: -10px !important;
+     margin-bottom: -10px !important;
+}
